@@ -7,19 +7,22 @@ num = start
 prime_count = 0
 
 while num <= end:
-    if num > 1:
-        i = 2
-        flag = 0
 
-        while i * i <= num:
-            if num % i == 0:
-                flag = 1
-                break
-            i = i + 1
+    i = 2
+    flag = 0
 
-        if flag == 0:
-            print("Prime:", num)
-            prime_count = prime_count + 1
+    if num <= 1:
+        flag = 1
+
+    while i < num:
+        if num % i == 0:
+            flag = 1
+            break
+        i = i + 1
+
+    if flag == 0:
+        print("Prime:", num)
+        prime_count = prime_count + 1
 
     num = num + 1
 
